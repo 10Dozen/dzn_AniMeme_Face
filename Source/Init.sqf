@@ -1,7 +1,7 @@
 
 dzn_fnc_AF_initFaces = {
 	if (isNil "dzn_AF_Faces") then {
-		dzn_AF_Faces = getArray(configFile >> "CfgPatches" >> "dzn_AnimeFace" >> "weapons");		
+		dzn_AF_Faces = getArray(configFile >> "CfgPatches" >> "dzn_AniMemeFace" >> "weapons");		
 	};
 	
 	dzn_AF_Faces
@@ -24,7 +24,11 @@ dzn_fnc_AF_applyFace = {
 		};
 		
 		if (isPlayer _unit) then {
-			hint "[AF] New face set";
+			hint parseText format [
+				"[AF] New face set<br/><img size='10' image='%1'/><br/>%2"
+				,getText(configFile >> "CfgGlasses" >> _face >> "picture") 
+				,getText(configFile >> "CfgGlasses" >> _face >> "displayName")
+			];
 		};
 	} else {
 		_this remoteExec ["dzn_fnc_AF_applyFace", _unit];
@@ -63,7 +67,7 @@ private _faceSelectionControls = "";
 } forEach dzn_AF_Faces;
 
 // ********** Topics ****************
-#define NOTES		private["_topics"]; _topics = []; player createDiarySubject ["dzn_AF_Page","dzn Anime Faces"];
+#define NOTES		private["_topics"]; _topics = []; player createDiarySubject ["dzn_AF_Page","dzn AniMeme Faces"];
 #define TOPIC(Y, NAME) 	if (Y) then { _topics pushBack ["dzn_AF_Page", [ NAME,
 #define END			]]; };
 #define ADD_TOPICS	for "_i" from (count _topics) to 0 step -1 do {player createDiaryRecord (_topics select _i);};
