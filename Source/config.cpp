@@ -33,10 +33,14 @@ class CfgPatches
 			, "dzn_G_AniMemeFace_Yoba_Serbian"
 			, "dzn_G_AniMemeFace_Yoba_Islamic"
 			, "dzn_G_AniMemeFace_Yoba_Operator"
+			, "dzn_G_AniMemeFace_Feel"
+			, "dzn_G_AniMemeFace_Boomer"
+			, "dzn_G_AniMemeFace_Boomer_Shades"
+			, "dzn_G_AniMemeFace_Zoomer"
 		};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
-		version=0.2
+		version=0.3
 	};
 };
 class Headgear_Base_F;
@@ -90,6 +94,10 @@ class CfgGlasses
 	class dzn_G_AniMemeFace_Ebin: dzn_AniMemeFace { AF_MACRO("[AF] Ebin",ebin,"Meme") };
 	class dzn_G_AniMemeFace_SGM_Vining: dzn_AniMemeFace { AF_MACRO("[AF] SGM M.Vining",k_vining,"Meme") };
 	
+	class dzn_G_AniMemeFace_Feel: dzn_AniMemeFace { AF_MACRO("[AF] Feel",feel,"Meme") };
+	class dzn_G_AniMemeFace_Boomer: dzn_AniMemeFace { AF_MACRO("[AF] Boomer",boomer,"Meme") };
+	class dzn_G_AniMemeFace_Boomer_Shades: dzn_AniMemeFace { AF_MACRO("[AF] Boomer (Shades)",boomer_shades,"Meme") };
+	class dzn_G_AniMemeFace_Zoomer: dzn_AniMemeFace { AF_MACRO("[AF] Zoomer",zoomer,"Meme") };
 	class dzn_G_AniMemeFace_Pepe_Happy: dzn_AniMemeFace { AF_MACRO("[AF] Pepe (Happy)",pepe_happy,"Meme") };
 	class dzn_G_AniMemeFace_Pepe_Angry: dzn_AniMemeFace { AF_MACRO("[AF] Pepe (Angry)",pepe_angry,"Meme") };
 	class dzn_G_AniMemeFace_Pepe_Islamic: dzn_AniMemeFace { AF_MACRO("[AF] Pepe (Islamic)",pepe_islamic,"Meme") };
