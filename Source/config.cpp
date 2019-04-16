@@ -37,10 +37,12 @@ class CfgPatches
 			, "dzn_G_AniMemeFace_Boomer"
 			, "dzn_G_AniMemeFace_Boomer_Shades"
 			, "dzn_G_AniMemeFace_Zoomer"
+			, "dzn_G_AniMemeFace_Alex_Jones"
+			, "dzn_G_AniMemeFace_Alex_Jones_1776"
 		};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
-		version=0.3
+		version=0.4
 	};
 };
 class Headgear_Base_F;
@@ -93,6 +95,8 @@ class CfgGlasses
 	class dzn_G_AniMemeFace_MuricanEbin: dzn_AniMemeFace { AF_MACRO("[AF] Murican Ebin",muricanEbin,"Meme") };
 	class dzn_G_AniMemeFace_Ebin: dzn_AniMemeFace { AF_MACRO("[AF] Ebin",ebin,"Meme") };
 	class dzn_G_AniMemeFace_SGM_Vining: dzn_AniMemeFace { AF_MACRO("[AF] SGM M.Vining",k_vining,"Meme") };
+	class dzn_G_AniMemeFace_Alex_Jones: dzn_AniMemeFace { AF_MACRO("[AF] Alex Jones",alex_jones,"Meme") };
+	class dzn_G_AniMemeFace_Alex_Jones_1776: dzn_AniMemeFace { AF_MACRO("[AF] Alex Jones (tfw 1776 has commenced)",alex_jones_1776,"Meme") };
 	
 	class dzn_G_AniMemeFace_Feel: dzn_AniMemeFace { AF_MACRO("[AF] Feel",feel,"Meme") };
 	class dzn_G_AniMemeFace_Boomer: dzn_AniMemeFace { AF_MACRO("[AF] Boomer",boomer,"Meme") };
