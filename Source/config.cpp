@@ -10,6 +10,7 @@ class CfgPatches
 			, "dzn_G_AniMemeFace_Chen"
 			, "dzn_G_AniMemeFace_Cirno"
 			, "dzn_G_AniMemeFace_Momiji"
+			, "dzn_G_AniMemeFace_Shoebill"
 			, "dzn_G_AniMemeFace_Kirima_Sharo"
 			, "dzn_G_AniMemeFace_Z1"
 			, "dzn_G_AniMemeFace_Z3"
@@ -39,6 +40,10 @@ class CfgPatches
 			, "dzn_G_AniMemeFace_Zoomer"
 			, "dzn_G_AniMemeFace_Alex_Jones"
 			, "dzn_G_AniMemeFace_Alex_Jones_1776"
+			, "dzn_G_AniMemeFace_WH40K_Guardsman"
+			, "dzn_G_AniMemeFace_WH40K_Commissar"
+			, "dzn_G_AniMemeFace_WH40K_Techpriest"
+			, "dzn_G_AniMemeFace_WH40K_Necron"
 		};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
@@ -78,6 +83,7 @@ class CfgGlasses
 	class dzn_G_AniMemeFace_Chen: dzn_AniMemeFace { AF_MACRO("[AF] Chen (Touhou Project)",chen,"Anime") };
 	class dzn_G_AniMemeFace_Cirno: dzn_AniMemeFace { AF_MACRO("[AF] Cirno (Touhou Project)",cirno,"Anime") };
 	class dzn_G_AniMemeFace_Momiji: dzn_AniMemeFace { AF_MACRO("[AF] Momiji Inubashiri (Touhou Project)",momiji_inubashiri,"Anime") };
+	class dzn_G_AniMemeFace_Shoebill: dzn_AniMemeFace { AF_MACRO("[AF] Shoebill (Kemono Friends)",shoebill,"Anime") };
 	
 	class dzn_G_AniMemeFace_Kirima_Sharo: dzn_AniMemeFace { AF_MACRO("[AF] Kirima Sharo (lolicon hentai)",kirima_sharo,"Anime") };	
 	class dzn_G_AniMemeFace_Z1: dzn_AniMemeFace { AF_MACRO("[AF] Z1 (Kancolle)",z1,"Anime") };
@@ -110,6 +116,11 @@ class CfgGlasses
 	class dzn_G_AniMemeFace_Yoba_Serbian: dzn_AniMemeFace { AF_MACRO("[AF] Yoba (Serbian)",yoba_serbian,"Meme") };
 	class dzn_G_AniMemeFace_Yoba_Islamic: dzn_AniMemeFace { AF_MACRO("[AF] Yoba (Islamic)",yoba_islamic,"Meme") };
 	class dzn_G_AniMemeFace_Yoba_Operator: dzn_AniMemeFace { AF_MACRO("[AF] Yoba (Operator)",yoba_operator,"Meme") };
+	
+	class dzn_G_AniMemeFace_WH40K_Guardsman: dzn_AniMemeFace { AF_MACRO("[AF] Guardsman (WH40K)",guardsman,"WH40K") };
+	class dzn_G_AniMemeFace_WH40K_Commissar: dzn_AniMemeFace { AF_MACRO("[AF] Commissar (WH40K)",commissar,"WH40K") };
+	class dzn_G_AniMemeFace_WH40K_Techpriest: dzn_AniMemeFace { AF_MACRO("[AF] Techpriest (WH40K)",techpriest,"WH40K") };
+	class dzn_G_AniMemeFace_WH40K_Necron: dzn_AniMemeFace { AF_MACRO("[AF] Necron (WH40K)",necron,"WH40K") };
 };
 
 
