@@ -6,15 +6,15 @@ class CfgPatches
 		weapons[]={
 			dzn_G_AniMemeFace_Popuko
 			, dzn_G_AniMemeFace_Pipimi
-			, dzn_G_AniMemeFace_IDW
-			, dzn_G_AniMemeFace_megumin			
+			, dzn_G_AniMemeFace_idwchan
+			, dzn_G_AniMemeFace_megumin
 			, dzn_G_AniMemeFace_Shoebill
 			, dzn_G_AniMemeFace_Kirima_Sharo
 			, dzn_G_AniMemeFace_Prosecutor
 			, dzn_G_AniMemeFace_OperatorChan
 			, dzn_G_AniMemeFace_Yukari_NVG
 			, dzn_G_AniMemeFace_Yuuri
-			, dzn_G_AniMemeFace_Chito			
+			, dzn_G_AniMemeFace_Chito
 			, dzn_G_AniMemeFace_Chen
 			, dzn_G_AniMemeFace_Cirno
 			, dzn_G_AniMemeFace_youmu_konpaku
@@ -41,6 +41,7 @@ class CfgPatches
 			, dzn_G_AniMemeFace_boomer
 			, dzn_G_AniMemeFace_boomer_shades
 			, dzn_G_AniMemeFace_zoomer
+			, dzn_G_AniMemeFace_chad_thundercock
 			, dzn_G_AniMemeFace_pepe_happy
 			, dzn_G_AniMemeFace_pepe_angry
 			, dzn_G_AniMemeFace_pepe_islamic
@@ -76,7 +77,7 @@ class Item_Base_F;
 		hiddenSelections[] = {"Camo"}; \
 		domain = DOMAIN \
 	};
-	
+
 class CfgGlasses
 {
 	class None;
@@ -92,34 +93,34 @@ class CfgGlasses
 		hiddenSelections[] = {"Camo"};
 		hiddenSelectionsTextures[] = {"\dzn_AniMemeFace\data\idwchan_ca.paa"};
 	};
-	
+
 	AF_MACRO("[AF] Popuko (Pop Team Epic)",popuko,"Anime")
 	AF_MACRO("[AF] Pipimi (Pop Team Epic)",pipimi,"Anime")
-	
+
 	AF_MACRO("[AF] IDW-chan (Girls' Frontline)",idwchan,"Anime")
 	AF_MACRO("[AF] Megumin (KonoSuba)",megumin,"Anime")
 	AF_MACRO("[AF] Shoebill (Kemono Friends)",shoebill,"Anime")
-	AF_MACRO("[AF] Kirima Sharo (lolicon hentai)",kirima_sharo,"Anime")	
+	AF_MACRO("[AF] Kirima Sharo (lolicon hentai)",kirima_sharo,"Anime")
 	AF_MACRO("[AF] Prosecutor",prosecutor,"Anime")
 	AF_MACRO("[AF] Operator Chan (/k)",operatorchan,"Anime")
 	AF_MACRO("[AF] Yukari (NVG) (Girls und Panzer)",yukari_NVG,"Anime")
 	AF_MACRO("[AF] Yuuri (Shoujo Shuumatsu Ryokou)",yuuri,"Anime")
 	AF_MACRO("[AF] Chito (Shoujo Shuumatsu Ryokou)",chito,"Anime")
-	
+
 	AF_MACRO("[AF] Chen (Touhou Project)",chen,"Anime")
 	AF_MACRO("[AF] Cirno (Touhou Project)",cirno,"Anime")
 	AF_MACRO("[AF] Youmu Konpaku (Touhou Project)",youmu_konpaku,"Anime")
 	AF_MACRO("[AF] Momiji Inubashiri (Touhou Project)",momiji_inubashiri,"Anime")
-	
+
 	AF_MACRO("[AF] Z1 (Kancolle)",z1,"Anime")
 	AF_MACRO("[AF] Z3 (Kancolle)",z3,"Anime")
 	AF_MACRO("[AF] Ikazuchi (Kancolle)",ikazuchi_kancolle,"Anime")
 	AF_MACRO("[AF] Kiso (Kancolle)",kiso_kancolle,"Anime")
 	AF_MACRO("[AF] Yukikaze (Kancolle)",yukikaze_kancolle,"Anime")
 	AF_MACRO("[AF] Zuikaku (Kancolle)",zuikaku_kancolle,"Anime")
-		
+
 	AF_MACRO("[AF] Liberator Ivan",liberator1,"Meme")
-	AF_MACRO("[AF] Liberator Vasily",liberator2,"Meme")	
+	AF_MACRO("[AF] Liberator Vasily",liberator2,"Meme")
 	AF_MACRO("[AF] Novislav (Remove kebab)",novislav,"Meme")
 	AF_MACRO("[AF] Merchant",merchant,"Meme")
 	AF_MACRO("[AF] Murican Ebin",muricanEbin,"Meme")
@@ -130,11 +131,12 @@ class CfgGlasses
 	AF_MACRO("[AF] General Guba",guba_general,"Meme")
 	AF_MACRO("[AF] Colonel Guba",guba,"Meme")
 	AF_MACRO("[AF] Pvt. Impossibiru",impossibiru,"Meme")
-	
+
 	AF_MACRO("[AF] Feel",feel,"Meme")
 	AF_MACRO("[AF] Boomer",boomer,"Meme")
 	AF_MACRO("[AF] Boomer (Shades)",boomer_shades,"Meme")
 	AF_MACRO("[AF] Zoomer",zoomer,"Meme")
+	AF_MACRO("[AF] Chad Thundercock",chad_thundercock,"Meme")
 	AF_MACRO("[AF] Pepe (Happy)",pepe_happy,"Meme")
 	AF_MACRO("[AF] Pepe (Angry)",pepe_angry,"Meme")
 	AF_MACRO("[AF] Pepe (Islamic)",pepe_islamic,"Meme")
@@ -147,7 +149,7 @@ class CfgGlasses
 	AF_MACRO("[AF] Yoba (Officer)",yoba_officer,"Meme")
 	AF_MACRO("[AF] Trollface",trollface,"Meme")
 	AF_MACRO("[AF] Shrek",shrek,"Meme")
-	
+
 	AF_MACRO("[AF] Guardsman (WH40K)",guardsman,"WH40K")
 	AF_MACRO("[AF] Commissar (WH40K)",commissar,"WH40K")
 	AF_MACRO("[AF] Techpriest (WH40K)",techpriest,"WH40K")
