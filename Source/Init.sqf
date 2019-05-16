@@ -1,10 +1,23 @@
 
 dzn_fnc_AF_initFaces = {
 	if (isNil "dzn_AF_Faces") then {
-		dzn_AF_Faces = getArray(configFile >> "CfgPatches" >> "dzn_AniMemeFace" >> "weapons");		
+		dzn_AF_Faces = getArray(configFile >> "CfgPatches" >> "dzn_AniMemeFace" >> "weapons");
+		
+		dzn_AF_Domains = [];
+		{
+			private _domain = getText (configFile >> "CfgGlasses" >> _x >> "domain");
+			private _domainVar = format ["dzn_AF__%1", _domain];
+
+			if (isNil _domainVar) then {
+				dzn_AF_Domains pushBackUnique _domain;
+				missionNamespace setVariable [_domainVar, [_x]];
+			} else {
+				(missionNamespace getVariable _domainVar) pushBack _x;
+			};
+		} forEach dzn_AF_Faces;
 	};
 	
-	dzn_AF_Faces
+	(true)
 };
 
 dzn_fnc_AF_applyFace = {
@@ -42,6 +55,16 @@ dzn_fnc_AF_applyRandomFace = {
 	[_unit, selectRandom dzn_AF_Faces, _forced, _removeHMD] call dzn_fnc_AF_applyFace;
 };
 
+dzn_fnc_AF_applyRandomFaceByDomain = {
+	params ["_unit", "_domain", ["_forced", false], ["_removeHMD", false]];
+	if (isNil "dzn_AF_Faces") then { [] call dzn_fnc_AF_initFaces; };
+
+	private _faces = (missionNamespace getVariable format ["dzn_AF__%1", _domain]);
+	if (_faces isEqualTo []) exitWith { hint "No faces in selected domain!"; };
+
+	[_unit, selectRandom _faces, _forced, _removeHMD] call dzn_fnc_AF_applyFace;
+};
+
 dzn_fnc_AF_applyRandomFaceToAllMissionUnits = {
 	params ["_forced", ["_removeHMD", false]];
 	
@@ -54,15 +77,36 @@ dzn_fnc_AF_applyRandomFaceToAllMissionUnits = {
 };
 
 
+
+
+
+
+// --------------
+// Initialization
+// --------------
+
 [] call dzn_fnc_AF_initFaces;
 
 if !(hasInterface) exitWith {};
 
-private _pattern = "<br />[ <font color='#A0DB65'><execute expression='[player, ""%2"", true] call dzn_fnc_AF_applyFace'>Get %1 face</execute></font> ]";
-private _faceSelectionControls = "";
-
+// Random in domain select buttons
+private _randomByDomainControl = "";
 {
-	private _btn = format [_pattern, getText(configFile >> "CfgGlasses" >> _x >> "displayName"), _x];
+	private _btn = format [
+		"<br />[ <font color='#A0DB65'><execute expression='[player, ""%1"", true] call dzn_fnc_AF_applyRandomFaceByDomain'>Get random %1 face</execute></font> ]"
+		, _x
+	];
+	_randomByDomainControl = _randomByDomainControl + _btn;
+} forEach dzn_AF_Domains;
+
+// Face select buttons
+private _faceSelectionControls = "";
+{
+	private _btn = format [
+		"<br />[ <font color='#A0DB65'><execute expression='[player, ""%2"", true] call dzn_fnc_AF_applyFace'>Get %1 face</execute></font> ]"
+		, getText(configFile >> "CfgGlasses" >> _x >> "displayName")
+		, _x
+	];
 	_faceSelectionControls = _faceSelectionControls + _btn;
 } forEach dzn_AF_Faces;
 
@@ -77,7 +121,7 @@ NOTES
 TOPIC(true, "[AF Player Controls]")
 "
 <br />[ <font color='#A0DB65'><execute expression='[player, true] call dzn_fnc_AF_applyRandomFace'>Get random face</execute></font> ] 
-<br />" + _faceSelectionControls
+<br />" + _randomByDomainControl + "<br />" + _faceSelectionControls
 END
 
 TOPIC(true, "[AF Mission Controls]")

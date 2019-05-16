@@ -64,7 +64,7 @@ class CfgPatches
 		};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
-		version=0.5
+		version=1.6;
 	};
 };
 class Headgear_Base_F;
@@ -79,6 +79,7 @@ class Item_Base_F;
 		scope = 2; \
 		hiddenSelections[] = {"Camo"}; \
 		domain = DOMAIN \
+		author = "AniMeme Faces"; \
 	};
 
 class CfgGlasses
@@ -158,11 +159,10 @@ class CfgGlasses
 	AF_MACRO("[AF] Techpriest (WH40K)",techpriest,"WH40K")
 	AF_MACRO("[AF] Necron (WH40K)",necron,"WH40K")
 
-	AF_MACRO("[AF] Joseph Seed (FC5)",josheph_seed,"FC5")
+	AF_MACRO("[AF] Joseph Seed (FC5)",joseph_seed,"FC5")
 	AF_MACRO("[AF] John Seed (FC5)",john_seed,"FC5")
 	AF_MACRO("[AF] Jacob Seed (FC5)",jacob_seed,"FC5")
 };
-
 
 class Extended_PostInit_EventHandlers
 {
