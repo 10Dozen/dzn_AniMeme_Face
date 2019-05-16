@@ -58,6 +58,9 @@ class CfgPatches
 			, dzn_G_AniMemeFace_commissar
 			, dzn_G_AniMemeFace_techpriest
 			, dzn_G_AniMemeFace_necron
+			, dzn_G_AniMemeFace_joseph_seed
+			, dzn_G_AniMemeFace_john_seed
+			, dzn_G_AniMemeFace_jacob_seed
 		};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
@@ -154,6 +157,10 @@ class CfgGlasses
 	AF_MACRO("[AF] Commissar (WH40K)",commissar,"WH40K")
 	AF_MACRO("[AF] Techpriest (WH40K)",techpriest,"WH40K")
 	AF_MACRO("[AF] Necron (WH40K)",necron,"WH40K")
+
+	AF_MACRO("[AF] Joseph Seed (FC5)",josheph_seed,"FC5")
+	AF_MACRO("[AF] John Seed (FC5)",john_seed,"FC5")
+	AF_MACRO("[AF] Jacob Seed (FC5)",jacob_seed,"FC5")
 };
 
 
