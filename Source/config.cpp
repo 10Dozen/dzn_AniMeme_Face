@@ -3,68 +3,10 @@ class CfgPatches
 	class dzn_AniMemeFace
 	{
 		units[]={};
-		weapons[]={
-			dzn_G_AniMemeFace_Popuko
-			, dzn_G_AniMemeFace_Pipimi
-			, dzn_G_AniMemeFace_idwchan
-			, dzn_G_AniMemeFace_megumin
-			, dzn_G_AniMemeFace_Shoebill
-			, dzn_G_AniMemeFace_Kirima_Sharo
-			, dzn_G_AniMemeFace_Prosecutor
-			, dzn_G_AniMemeFace_OperatorChan
-			, dzn_G_AniMemeFace_Yukari_NVG
-			, dzn_G_AniMemeFace_Yuuri
-			, dzn_G_AniMemeFace_Chito
-			, dzn_G_AniMemeFace_Chen
-			, dzn_G_AniMemeFace_Cirno
-			, dzn_G_AniMemeFace_youmu_konpaku
-			, dzn_G_AniMemeFace_momiji_inubashiri
-			, dzn_G_AniMemeFace_Z1
-			, dzn_G_AniMemeFace_Z3
-			, dzn_G_AniMemeFace_ikazuchi_kancolle
-			, dzn_G_AniMemeFace_kiso_kancolle
-			, dzn_G_AniMemeFace_yukikaze_kancolle
-			, dzn_G_AniMemeFace_zuikaku_kancolle
-			, dzn_G_AniMemeFace_liberator1
-			, dzn_G_AniMemeFace_liberator2
-			, dzn_G_AniMemeFace_novislav
-			, dzn_G_AniMemeFace_merchant
-			, dzn_G_AniMemeFace_muricanEbin
-			, dzn_G_AniMemeFace_ebin
-			, dzn_G_AniMemeFace_k_vining
-			, dzn_G_AniMemeFace_alex_jones
-			, dzn_G_AniMemeFace_alex_jones_1776
-			, dzn_G_AniMemeFace_guba_general
-			, dzn_G_AniMemeFace_guba
-			, dzn_G_AniMemeFace_impossibiru
-			, dzn_G_AniMemeFace_feel
-			, dzn_G_AniMemeFace_boomer
-			, dzn_G_AniMemeFace_boomer_shades
-			, dzn_G_AniMemeFace_zoomer
-			, dzn_G_AniMemeFace_chad_thundercock
-			, dzn_G_AniMemeFace_pepe_happy
-			, dzn_G_AniMemeFace_pepe_angry
-			, dzn_G_AniMemeFace_pepe_islamic
-			, dzn_G_AniMemeFace_pepe_operator
-			, dzn_G_AniMemeFace_yoba
-			, dzn_G_AniMemeFace_yoba_serbian
-			, dzn_G_AniMemeFace_yoba_islamic
-			, dzn_G_AniMemeFace_yoba_operator
-			, dzn_G_AniMemeFace_yoba_oldfag
-			, dzn_G_AniMemeFace_yoba_officer
-			, dzn_G_AniMemeFace_trollface
-			, dzn_G_AniMemeFace_shrek
-			, dzn_G_AniMemeFace_guardsman
-			, dzn_G_AniMemeFace_commissar
-			, dzn_G_AniMemeFace_techpriest
-			, dzn_G_AniMemeFace_necron
-			, dzn_G_AniMemeFace_joseph_seed
-			, dzn_G_AniMemeFace_john_seed
-			, dzn_G_AniMemeFace_jacob_seed
-		};
+		weapons[]={};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
-		version=1.6;
+		version=1.7;
 	};
 };
 class Headgear_Base_F;
@@ -169,5 +111,68 @@ class Extended_PostInit_EventHandlers
 	class dzn_AniMemeFace
 	{
 		init = call compile preprocessFileLineNumbers "\dzn_AniMemeFace\Init.sqf";
+	};
+};
+
+class dzn_AniMemeFaces
+{
+	faces[] = {
+		dzn_G_AniMemeFace_Popuko
+		, dzn_G_AniMemeFace_Pipimi
+		, dzn_G_AniMemeFace_idwchan
+		, dzn_G_AniMemeFace_megumin
+		, dzn_G_AniMemeFace_Shoebill
+		, dzn_G_AniMemeFace_Kirima_Sharo
+		, dzn_G_AniMemeFace_Prosecutor
+		, dzn_G_AniMemeFace_OperatorChan
+		, dzn_G_AniMemeFace_Yukari_NVG
+		, dzn_G_AniMemeFace_Yuuri
+		, dzn_G_AniMemeFace_Chito
+		, dzn_G_AniMemeFace_Chen
+		, dzn_G_AniMemeFace_Cirno
+		, dzn_G_AniMemeFace_youmu_konpaku
+		, dzn_G_AniMemeFace_momiji_inubashiri
+		, dzn_G_AniMemeFace_Z1
+		, dzn_G_AniMemeFace_Z3
+		, dzn_G_AniMemeFace_ikazuchi_kancolle
+		, dzn_G_AniMemeFace_kiso_kancolle
+		, dzn_G_AniMemeFace_yukikaze_kancolle
+		, dzn_G_AniMemeFace_zuikaku_kancolle
+		, dzn_G_AniMemeFace_liberator1
+		, dzn_G_AniMemeFace_liberator2
+		, dzn_G_AniMemeFace_novislav
+		, dzn_G_AniMemeFace_merchant
+		, dzn_G_AniMemeFace_muricanEbin
+		, dzn_G_AniMemeFace_ebin
+		, dzn_G_AniMemeFace_k_vining
+		, dzn_G_AniMemeFace_alex_jones
+		, dzn_G_AniMemeFace_alex_jones_1776
+		, dzn_G_AniMemeFace_guba_general
+		, dzn_G_AniMemeFace_guba
+		, dzn_G_AniMemeFace_impossibiru
+		, dzn_G_AniMemeFace_feel
+		, dzn_G_AniMemeFace_boomer
+		, dzn_G_AniMemeFace_boomer_shades
+		, dzn_G_AniMemeFace_zoomer
+		, dzn_G_AniMemeFace_chad_thundercock
+		, dzn_G_AniMemeFace_pepe_happy
+		, dzn_G_AniMemeFace_pepe_angry
+		, dzn_G_AniMemeFace_pepe_islamic
+		, dzn_G_AniMemeFace_pepe_operator
+		, dzn_G_AniMemeFace_yoba
+		, dzn_G_AniMemeFace_yoba_serbian
+		, dzn_G_AniMemeFace_yoba_islamic
+		, dzn_G_AniMemeFace_yoba_operator
+		, dzn_G_AniMemeFace_yoba_oldfag
+		, dzn_G_AniMemeFace_yoba_officer
+		, dzn_G_AniMemeFace_trollface
+		, dzn_G_AniMemeFace_shrek
+		, dzn_G_AniMemeFace_guardsman
+		, dzn_G_AniMemeFace_commissar
+		, dzn_G_AniMemeFace_techpriest
+		, dzn_G_AniMemeFace_necron
+		, dzn_G_AniMemeFace_joseph_seed
+		, dzn_G_AniMemeFace_john_seed
+		, dzn_G_AniMemeFace_jacob_seed
 	};
 };

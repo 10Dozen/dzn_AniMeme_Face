@@ -1,7 +1,7 @@
 
 dzn_fnc_AF_initFaces = {
 	if (isNil "dzn_AF_Faces") then {
-		dzn_AF_Faces = getArray(configFile >> "CfgPatches" >> "dzn_AniMemeFace" >> "weapons");
+		dzn_AF_Faces = getArray(configFile >> "dzn_AniMemeFaces" >> "faces");
 		
 		dzn_AF_Domains = [];
 		{
