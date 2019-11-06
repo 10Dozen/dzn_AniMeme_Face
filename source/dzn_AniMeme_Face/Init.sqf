@@ -77,10 +77,6 @@ dzn_fnc_AF_applyRandomFaceToAllMissionUnits = {
 };
 
 
-
-
-
-
 // --------------
 // Initialization
 // --------------
@@ -89,51 +85,47 @@ dzn_fnc_AF_applyRandomFaceToAllMissionUnits = {
 
 if !(hasInterface) exitWith {};
 
-// Random in domain select buttons
-private _randomByDomainControl = "";
-{
-	private _btn = format [
-		"<br />[ <font color='#A0DB65'><execute expression='[player, ""%1"", true] call dzn_fnc_AF_applyRandomFaceByDomain'>Get random %1 face</execute></font> ]"
-		, _x
+dzn_fnc_AF_addTopic = {
+	private _diaryPage = "dzn_AF_Page";
+	if (player diarySubjectExists _diaryPage) exitWith {};
+	
+	private _fnc_trim = { _this splitString toString[9, 13, 10] joinString "" };
+	
+	// Random in domain select buttons
+	private _randomByDomainControl = "";
+	{
+		private _btn = format [
+			"<br />[ <font color='#A0DB65'><execute expression='[player, ""%1"", true] call %2'>Get random %1 face</execute></font> ]"
+			, _x
+			, "dzn_fnc_AF_applyRandomFaceByDomain"
+		];
+		_randomByDomainControl = _randomByDomainControl + _btn;
+	} forEach dzn_AF_Domains;
+
+	// Face select buttons
+	private _faceSelectionControls = "";
+	{ 
+		private _btn = format [ 
+			"<execute expression='[player, ""%2"", true] call dzn_fnc_AF_applyFace'><img image='%1' width='64px' />Get</execute>" 
+			, getText(configFile >> "CfgGlasses" >> _x >> "picture") 
+			, _x 
+		]; 
+		_faceSelectionControls = _faceSelectionControls + _btn; 
+	} forEach dzn_AF_Faces;
+	
+	private _AF_Player_Topic = "<br />[ <font color='#A0DB65'><execute expression='[player, true] call dzn_fnc_AF_applyRandomFace'>Get random face</execute></font> ]<br />" + _randomByDomainControl + "<br /><br />" + _faceSelectionControls;
+	private _AF_Mission_Topic = format [
+		"<br />[<font color='#A0DB65'><execute expression='[false, false] call %1'>Apply to all units (not forced, save NVGs)</execute></font>]
+		<br /><br />[<font color='#A0DB65'><execute expression='[true, false] call %1'>Apply to all units (forced, save NVGs)</execute></font>]
+		<br /><br />[<font color='#A0DB65'><execute expression='[false, true] call %1'>Apply to all units (not forced, remove NVGs)</execute></font>]
+		<br /><br />[<font color='#A0DB65'><execute expression='[true, true] call %1'>Apply to all units (forced, remove NVGs)</execute></font>]
+		"
+		, "dzn_fnc_AF_applyRandomFaceToAllMissionUnits"
 	];
-	_randomByDomainControl = _randomByDomainControl + _btn;
-} forEach dzn_AF_Domains;
+	
+	player createDiarySubject [_diaryPage,"dzn AniMeme Faces"];
+	player createDiaryRecord [ _diaryPage, ["[AF Mission Controls]", _AF_Mission_Topic call _fnc_trim] ];
+	player createDiaryRecord [ _diaryPage, ["[AF Player Controls]", _AF_Player_Topic] ];
+};
 
-// Face select buttons
-private _faceSelectionControls = "";
-{
-	private _btn = format [
-		"<br />[ <font color='#A0DB65'><execute expression='[player, ""%2"", true] call dzn_fnc_AF_applyFace'>Get %1 face</execute></font> ]"
-		, getText(configFile >> "CfgGlasses" >> _x >> "displayName")
-		, _x
-	];
-	_faceSelectionControls = _faceSelectionControls + _btn;
-} forEach dzn_AF_Faces;
-
-// ********** Topics ****************
-#define NOTES		private["_topics"]; _topics = []; player createDiarySubject ["dzn_AF_Page","dzn AniMeme Faces"];
-#define TOPIC(Y, NAME) 	if (Y) then { _topics pushBack ["dzn_AF_Page", [ NAME,
-#define END			]]; };
-#define ADD_TOPICS	for "_i" from (count _topics) to 0 step -1 do {player createDiaryRecord (_topics select _i);};
-
-NOTES	
-
-TOPIC(true, "[AF Player Controls]")
-"
-<br />[ <font color='#A0DB65'><execute expression='[player, true] call dzn_fnc_AF_applyRandomFace'>Get random face</execute></font> ] 
-<br />" + _randomByDomainControl + "<br />" + _faceSelectionControls
-END
-
-TOPIC(true, "[AF Mission Controls]")
-"<br />[<font color='#A0DB65'><execute expression='[false, false] call dzn_fnc_AF_applyRandomFaceToAllMissionUnits'>Apply to all units (not forced, save NVGs)</execute></font>]
-<br />
-<br />[<font color='#A0DB65'><execute expression='[true, false] call dzn_fnc_AF_applyRandomFaceToAllMissionUnits'>Apply to all units (forced, save NVGs)</execute></font>]
-<br />
-<br />[<font color='#A0DB65'><execute expression='[false, true] call dzn_fnc_AF_applyRandomFaceToAllMissionUnits'>Apply to all units (not forced, remove NVGs)</execute></font>]
-<br />
-<br />[<font color='#A0DB65'><execute expression='[true, true] call dzn_fnc_AF_applyRandomFaceToAllMissionUnits'>Apply to all units (forced, remove NVGs)</execute></font>]
-
-"
-END
-
-ADD_TOPICS
+[{ [] call dzn_fnc_AF_addTopic; }, 60, []] call CBA_fnc_addPerFrameHandler;
