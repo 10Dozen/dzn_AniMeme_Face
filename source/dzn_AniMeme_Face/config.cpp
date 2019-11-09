@@ -6,7 +6,7 @@ class CfgPatches
 		weapons[]={};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
-		version=1.7;
+		version=1.8;
 	};
 };
 class Headgear_Base_F;
@@ -104,6 +104,12 @@ class CfgGlasses
 	AF_MACRO("[AF] Joseph Seed (FC5)",joseph_seed,"FC5")
 	AF_MACRO("[AF] John Seed (FC5)",john_seed,"FC5")
 	AF_MACRO("[AF] Jacob Seed (FC5)",jacob_seed,"FC5")
+	
+	AF_MACRO("[AF] Alarm mark (MGS)",mgs_alarm,"MGS")
+	AF_MACRO("[AF] Venom Snake (MGS)",venomsnake,"MGS")
+	AF_MACRO("[AF] Miller (MGS)",miller,"MGS")
+	AF_MACRO("[AF] Revolver Ocelot (MGS)",ocelot,"MGS")
+	AF_MACRO("[AF] Revolver 'Revolver Ocelot' Ocelot (MGS)",revolverocelot,"MGS")
 };
 
 class Extended_PostInit_EventHandlers
@@ -173,6 +179,11 @@ class dzn_AniMemeFaces
 		, dzn_G_AniMemeFace_necron
 		, dzn_G_AniMemeFace_joseph_seed
 		, dzn_G_AniMemeFace_john_seed
-		, dzn_G_AniMemeFace_jacob_seed
+		
+		, dzn_G_AniMemeFace_mgs_alarm
+		, dzn_G_AniMemeFace_venomsnake
+		, dzn_G_AniMemeFace_miller
+		, dzn_G_AniMemeFace_ocelot
+		, dzn_G_AniMemeFace_revolverocelot
 	};
 };
