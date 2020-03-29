@@ -179,6 +179,7 @@ class dzn_AniMemeFaces
 		, dzn_G_AniMemeFace_necron
 		, dzn_G_AniMemeFace_joseph_seed
 		, dzn_G_AniMemeFace_john_seed
+		, dzn_G_AniMemeFace_jacob_seed
 		
 		, dzn_G_AniMemeFace_mgs_alarm
 		, dzn_G_AniMemeFace_venomsnake
