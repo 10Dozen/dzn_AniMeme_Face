@@ -6,7 +6,7 @@ class CfgPatches
 		weapons[]={};
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F","CBA_MAIN"};
-		version=1.8;
+		version=1.9;
 	};
 };
 class Headgear_Base_F;
@@ -110,6 +110,11 @@ class CfgGlasses
 	AF_MACRO("[AF] Miller (MGS)",miller,"MGS")
 	AF_MACRO("[AF] Revolver Ocelot (MGS)",ocelot,"MGS")
 	AF_MACRO("[AF] Revolver 'Revolver Ocelot' Ocelot (MGS)",revolverocelot,"MGS")
+
+	AF_MACRO("[AF] Suheil al-Hassan",alhassan,"SAA")
+	AF_MACRO("[AF] Bashar al-Assad (Military)",alassad,"SAA")
+	AF_MACRO("[AF] Bashar al-Assad",alassad2,"SAA")
+	AF_MACRO("[AF] Issam Zahreddine",zahreddine,"SAA")
 };
 
 class Extended_PostInit_EventHandlers
@@ -186,5 +191,10 @@ class dzn_AniMemeFaces
 		, dzn_G_AniMemeFace_miller
 		, dzn_G_AniMemeFace_ocelot
 		, dzn_G_AniMemeFace_revolverocelot
+		
+		, dzn_G_AniMemeFace_alassad
+		, dzn_G_AniMemeFace_alassad2
+		, dzn_G_AniMemeFace_alhassan
+		, dzn_G_AniMemeFace_zahreddine
 	};
 };
