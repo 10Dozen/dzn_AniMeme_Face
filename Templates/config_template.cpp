@@ -11,16 +11,20 @@ class CfgPatches
 
 class Headgear_Base_F;
 class Item_Base_F;
+
+/*
+	Update "picture" and "hiddenSelectionsTextures" path with your mod path!
+*/
 #define AF_MACRO(NAME,TEXTURE,DOMAIN) \
 	class dzn_G_AniMemeFace_##TEXTURE : dzn_AniMemeFace \
 	{ \
 		displayName = NAME; \
-		picture = \dzn_AniMemeFace\data\TEXTURE##_ca.paa; \
-		hiddenSelectionsTextures[] = { \dzn_AniMemeFace\data\TEXTURE##_ca.paa }; \
+		picture = \YOUR_MOD_PATH\TEXTURE##_ca.paa; \
+		hiddenSelectionsTextures[] = { \YOUR_MOD_PATH\TEXTURE##_ca.paa }; \
 		scope = 2; \
 		hiddenSelections[] = {"Camo"}; \
 		domain = DOMAIN \
-		author = "AniMeme Faces"; \
+		author = "YOUR NAME"; \
 	};
 	
 class CfgGlasses
